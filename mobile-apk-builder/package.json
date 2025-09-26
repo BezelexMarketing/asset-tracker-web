@@ -1,0 +1,29 @@
+{
+  "name": "asset-tracker-mobile-apk",
+  "version": "1.0.0",
+  "description": "Asset Tracker Mobile APK Builder using Cordova",
+  "main": "index.js",
+  "scripts": {
+    "install-cordova": "npm install -g cordova",
+    "create-app": "cordova create AssetTrackerApp com.assettracker.mobile AssetTrackerMobile",
+    "add-android": "cd AssetTrackerApp && cordova platform add android",
+    "build-android": "cd AssetTrackerApp && cordova build android",
+    "build-release": "cd AssetTrackerApp && cordova build android --release",
+    "serve": "cd AssetTrackerApp && cordova serve"
+  },
+  "dependencies": {
+    "cordova": "^12.0.0"
+  },
+  "devDependencies": {
+    "cordova-android": "^12.0.1"
+  },
+  "keywords": [
+    "mobile",
+    "android",
+    "asset-tracker",
+    "cordova",
+    "apk"
+  ],
+  "author": "Asset Tracker Team",
+  "license": "MIT"
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https: 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; media-src *; img-src 'self' data: content: https:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Asset Tracker Mobile</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-align: center;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .logo {
+                width: 80px;
+                height: 80px;
+                background: white;
+                border-radius: 20px;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+                color: #667eea;
+            }
+            h1 {
+                font-size: 28px;
+                margin: 0 0 10px 0;
+                font-weight: 600;
+            }
+            .subtitle {
+                font-size: 16px;
+                opacity: 0.9;
+                margin-bottom: 30px;
+            }
+            .launch-btn {
+                background: white;
+                color: #667eea;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 25px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                transition: transform 0.2s;
+            }
+            .launch-btn:hover {
+                transform: translateY(-2px);
+            }
+            .status {
+                margin-top: 20px;
+                font-size: 14px;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <div class="logo">📦</div>
+            <h1>Asset Tracker</h1>
+            <p class="subtitle">Professional Asset Management</p>
+            <button class="launch-btn" onclick="launchApp()">Launch App</button>
+            <div class="status" id="status">Ready to launch</div>
+        </div>
+        <script src="cordova.js"></script>
+        <script>
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function onDeviceReady() {
+                document.getElementById('status').textContent = 'Device ready - Tap to launch';
+            }
+            
+            function launchApp() {
+                document.getElementById('status').textContent = 'Launching Asset Tracker...';
+                
+                // Try to open the PWA in the system browser
+                if (window.cordova && window.cordova.InAppBrowser) {
+                    window.cordova.InAppBrowser.open('https://asset-tracker-pro.vercel.app/', '_system');
+                } else {
+                    // Fallback for web testing
+                    window.open('https://asset-tracker-pro.vercel.app/', '_blank');
+                }
+            }
+        </script>
+    </body>
+</html>

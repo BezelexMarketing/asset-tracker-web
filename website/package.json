@@ -1,0 +1,61 @@
+{
+  "name": "beze-asset-tracker-website",
+  "version": "1.0.0",
+  "description": "Professional business website for Beze Asset Tracker - Enterprise asset management solution",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export",
+    "analyze": "cross-env ANALYZE=true next build",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf .next out",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod --dir=out",
+    "sitemap": "next-sitemap"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
+    "framer-motion": "^10.16.16",
+    "next": "14.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.5.3"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "next-sitemap": "^4.2.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "asset tracking",
+    "inventory management",
+    "business software",
+    "enterprise solution",
+    "asset management",
+    "tracking system"
+  ],
+  "author": "Beze Asset Tracker Team",
+  "license": "MIT",
+  "homepage": "https://beze-asset-tracker.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beze-asset-tracker/website.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
